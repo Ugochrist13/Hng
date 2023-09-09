@@ -3,7 +3,7 @@ const currentDay = new Intl.DateTimeFormat("en-US", { weekday: "long" }).format(
   currentDate
 );
 
-const currentUTCTime = currentDate.getTime();
+const currentUTCTime = `(${currentDate.getTime()})`;
 
 document.querySelector('[data-testid="currentDayOfTheWeek"]').innerText =
   currentDay;
