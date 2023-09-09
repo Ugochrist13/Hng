@@ -1,18 +1,11 @@
-const daysOfWeek = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
 const currentDate = new Date();
-const currentDay = daysOfWeek[currentDate.getUTCDay()];
+const currentDay = new Intl.DateTimeFormat("en-US", { weekday: "long" }).format(
+  currentDate
+);
 
-const currentUTCTime = Date.now();
+const currentUTCTime = currentDate.getTime();
 
-document.querySelector('[data-testid="currentDayOfTheWeek"]').textContent =
+document.querySelector('[data-testid="currentDayOfTheWeek"]').innerText =
   currentDay;
-document.querySelector('[data-testid="currentUTCTime"]').textContent =
+document.querySelector('[data-testid="currentUTCTime"]').innerText =
   currentUTCTime;
