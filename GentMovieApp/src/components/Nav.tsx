@@ -1,22 +1,38 @@
 import React, { useState } from "react";
 import { IoIosSearch, IoMdMenu } from "react-icons/io";
 import logo from "../assets/logo.svg";
-import logoText from "../assets/logotext.svg";
 
-interface SearchBarProps {
+/**
+ * Props for the Navbar component.
+ */
+interface NavbarProps {
+  /**
+   * Callback function to handle search when the user enters a query.
+   * @param query - The search query entered by the user.
+   */
   onSearch: (query: string) => void;
 }
 
-const Navbar: React.FC<SearchBarProps> = ({ onSearch }) => {
+/**
+ * A functional component representing the navigation bar.
+ * @param {NavbarProps} props - The properties passed to the component.
+ */
+const Navbar: React.FC<NavbarProps> = ({ onSearch }) => {
+  // State to store the user's search query
   const [query, setQuery] = useState("");
 
+  /**
+   * Handles the search action when the user clicks the search button.
+   */
   const handleSearch = () => {
+    // Call the provided onSearch callback with the current query
     onSearch(query);
   };
 
   return (
     <nav className="w-full p-2 flex justify-between items-center">
       <div className="flex items-center">
+        {/* Logo and app name */}
         <a
           href="/"
           className="flex items-center justify-start gap-x-3 text-white text-md font-semibold"
@@ -26,25 +42,29 @@ const Navbar: React.FC<SearchBarProps> = ({ onSearch }) => {
         </a>
       </div>
       <div className="w-1/2 flex justify-between items-center border-white border px-2 rounded-md">
+        {/* Search input field */}
         <input
           type="text"
           placeholder="Search for your movies.."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="w-[90%] p2-10 pr-4 py-1 text-xs text-white bg-transparent outline-none focus:outline-none focus:border-none focus:shadow-none border-transparent shadow-none"
+          className="w-[90%] p-2 pl-10 pr-4 py-1 text-xs text-white bg-transparent outline-none focus:outline-none focus:border-none focus:shadow-none border-transparent shadow-none"
         />
+        {/* Search button */}
         <button
           onClick={handleSearch}
-          className="text-white "
+          className="text-white"
         >
           <IoIosSearch className="text-white" />
         </button>
       </div>
       <div className="flex items-center">
+        {/* Sign-in link */}
         <a href="#" className="text-white mr-4">
-         Sign in
+          Sign in
         </a>
         <div className="block">
+          {/* Hamburger menu icon */}
           <div className="hamburger-menu">
             <IoMdMenu className="text-2xl text-red-400" />
           </div>
