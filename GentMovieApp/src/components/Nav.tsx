@@ -31,7 +31,7 @@ const Navbar: React.FC<SearchBarProps> = ({ onSearch }) => {
           placeholder="Search for your movies.."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="p2-10 pr-4 py-1 text-xs text-white bg-transparent outline-none focus:outline-none focus:border-none focus:shadow-none border-transparent shadow-none"
+          className="w-[90%] p2-10 pr-4 py-1 text-xs text-white bg-transparent outline-none focus:outline-none focus:border-none focus:shadow-none border-transparent shadow-none"
         />
         <button
           onClick={handleSearch}
