@@ -5,6 +5,7 @@ import MovieData from "../components/MovieData";
 import Navbar from "../components/Nav";
 import { useTransition, animated, Transition } from "react-spring";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 // Define the Home component
 const Home: React.FC = () => {
@@ -115,6 +116,7 @@ const Home: React.FC = () => {
 
       {/* Render the MovieList component with movies */}
       {loading ? <p>Loading...</p> : <MovieList movies={movies} />}
+      <Footer />
     </div>
   );
 };
