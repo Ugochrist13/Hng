@@ -29,6 +29,12 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch }) => {
     onSearch(query);
   };
 
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleSearch(); // Trigger search when Enter key is pressed
+    }
+  };
+
   return (
     <nav className="w-full p-2 flex justify-between items-center">
       <div className="flex items-center">
@@ -47,6 +53,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch }) => {
           type="text"
           placeholder="Search for your movies.."
           value={query}
+          onKeyPress={handleKeyPress}
           onChange={(e) => setQuery(e.target.value)}
           className="w-[90%] p-2 pl-10 pr-4 py-1 text-xs text-white bg-transparent outline-none focus:outline-none focus:border-none focus:shadow-none border-transparent shadow-none"
         />
