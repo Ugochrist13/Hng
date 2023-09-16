@@ -26,6 +26,7 @@ const MovieList: React.FC<MovieListProps> = ({ movies }) => {
           title={movie.title}
           release_date={movie.release_date}
           poster_path={movie.poster_path}
+          genres={movie.genres}
         />
       ))}
     </div>

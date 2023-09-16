@@ -14,6 +14,7 @@ interface MovieData {
     adult: boolean;
     runtime: number;
     overview: string;
+    genres: { id: number; name: string }[]; 
   }
   
   export default MovieData;

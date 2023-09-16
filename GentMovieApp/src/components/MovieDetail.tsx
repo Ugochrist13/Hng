@@ -4,47 +4,39 @@ import star from "../assets/star.svg";
 import divimg from "../assets/divimg.svg";
 import ticket from "../assets/ticket.svg";
 import list from "../assets/list.svg";
+import list2 from "../assets/list2.svg";
+import save from "../assets/save.svg";
+import circle from "../assets/circle.svg";
+import arrow from "../assets/arrow.svg";
 
 /**
  * Props for the MovieDetail component.
  */
 interface MovieDetailProps {
-  /**
-   * The title of the movie.
-   */
   title: string;
-
-  /**
-   * The release date of the movie.
-   */
   release_date: string;
-
-  /**
-   * The runtime of the movie in minutes.
-   */
   runtime: number;
-
-  /**
-   * A brief overview of the movie.
-   */
   overview: string;
-
-  /**
-   * The backdrop path for the movie image.
-   */
   backdrop_path: string;
+  vote_average: number;
+  vote_count: number;
+  genres: { id: number; name: string }[];
 }
 
 /**
  * A functional component representing the details of a movie.
  * @param {MovieDetailProps} props - The properties passed to the component.
  */
+
 const MovieDetail: React.FC<MovieDetailProps> = ({
   title,
   release_date,
   runtime,
   overview,
   backdrop_path,
+  vote_average,
+  vote_count,
+  genres,
 }) => {
   // Base URL for movie backdrop images
   const backdropBaseUrl = "https://image.tmdb.org/t/p/original";
@@ -68,38 +60,51 @@ const MovieDetail: React.FC<MovieDetailProps> = ({
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
-          className="w-full h-[80%]"
-        ></div>
-        <div className="w-full flex justify-between items-center mt-4 my-4 px-4">
-          <div className="flex justify-start gap-x-8 items-center">
-            <div className="flex justify-start items-center">
+          className="w-full flex justify-center items-center h-[80%]"
+        >
+          <div className="flex relative flex-col items-center justify-center gap-1 p-2">
+            <img className="absolute w-8 top-6" src={save} alt="" />
+            <img className="w-[60px]" src={circle} alt="" />
+            <p className="text-white">Watch Trailer</p>
+          </div>
+        </div>
+        <div className="w-full flex flex-col md:flex-row  justify-between items-center mt-4 my-4 px-4">
+          <div className="flex flex-col md:flex-row justify-start gap-x-8 items-center">
+            <div className="flex justify-start flex-col md:flex-row items-center">
               <h2
                 data-testid="movie-title"
                 className="text-black hover:text-hover text-2xl"
               >
-                {`${title} .`}
+                {title}
               </h2>
               <p
                 data-testid="movie-release-date"
                 className="text-black hover:text-hover text-2xl"
               >
-                {`${release_date} .`}
+                {`. ${release_date}`}
               </p>
               <p
                 data-testid="movie-runtime"
                 className="text-black hover:text-hover text-2xl"
-              >{`${runtime} mins`}</p>
+              >{`. ${runtime} mins`}</p>
             </div>
-            <div className="text-bg">Hello</div>{" "}
-            <div className="text-bg">How far</div>
+            <div className="flex justify-start gap-x-2 items-center">
+              {genres?.map((genre, id) => (
+                <div key={id} className="text-bg">
+                  {genre?.name}
+                </div>
+              ))}
+            </div>
           </div>
           <div className="flex justify-end items-center gap-x-3">
             <img className="w-7" src={star} alt="" />
-            <p>8.5 | 350k</p>
+            <p className="text-black">
+              {vote_average} | {vote_count}
+            </p>
           </div>
         </div>
-        <div className="flex w-full p-2">
-          <div className="w-3/5">
+        <div className="flex flex-col md:flex-row w-full p-2">
+          <div className="w-full md:w-3/5">
             <p
               data-testid="movie-overview"
               className="p-4 text-lg text-justify mb-3"
@@ -121,8 +126,19 @@ const MovieDetail: React.FC<MovieDetailProps> = ({
                 Tom Cruise, Jennifer Connelly, Miles Teller
               </span>
             </p>
+            <div className="flex mt-6">
+              <div className="w-1/2 z-20 flex items-center justify-center rounded-lg border bg-bg py-4 gap-x-2 mb-6">
+                <p className="text-white text-xl">Top rated movie #65</p>
+              </div>
+              <div className="w-2/3 flex items-center justify-between rounded-lg border border-bg py-4 px-4 mb-6">
+                <p className="text-black text-xl">Awards 9 nominations</p>
+                <div>
+                  <img src={arrow} alt="" />
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="w-2/5">
+          <div className="w-full md:w-2/5">
             <div className="w-full flex items-center justify-center rounded-lg bg-bg py-4 gap-x-2 mb-2">
               <div>
                 <img src={ticket} alt="" />
@@ -135,8 +151,16 @@ const MovieDetail: React.FC<MovieDetailProps> = ({
               </div>
               <p className="text-black text-xl">More watch options</p>
             </div>
-            <div className="full">
-              <img className="full" src={divimg} alt="" />
+            <div className="w-full relative">
+              <img className="w-full" src={divimg} alt="" />
+              <div className="w-full absolute flex bottom-[-25px] items-center justify-center rounded-lg border border-white py-3 gap-x-2 mb-6">
+                <div>
+                  <img src={list2} alt="" />
+                </div>
+                <p className="text-white text-xl">
+                  The Best Movies and Shows in September
+                </p>
+              </div>
             </div>
           </div>
         </div>

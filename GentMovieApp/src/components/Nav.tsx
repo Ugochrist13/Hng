@@ -36,7 +36,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch }) => {
   };
 
   return (
-    <nav className="w-full p-2 flex justify-between items-center">
+    <nav className="w-full relative p-2 flex justify-between items-center">
       <div className="flex items-center">
         {/* Logo and app name */}
         <a
@@ -47,7 +47,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch }) => {
           <p>MovieBox</p>
         </a>
       </div>
-      <div className="w-1/2 flex justify-between items-center border-white border px-2 rounded-md">
+      <div className="w-2/3 md:w-1/2 flex justify-between absolute md:static z-40 top-20 right-14 items-center border-white border px-2 rounded-md">
         {/* Search input field */}
         <input
           type="text"

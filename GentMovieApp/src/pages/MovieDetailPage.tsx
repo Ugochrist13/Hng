@@ -40,6 +40,9 @@ const MovieDetailPage: React.FC = () => {
           release_date={movie.release_date}
           runtime={movie.runtime || 0}
           overview={movie.overview || 'No overview available'}
+          vote_average={movie.vote_average}
+          vote_count={movie.vote_count}
+          genres={movie.genres}
         />
       ) : (
         // Display a loading message while fetching data
