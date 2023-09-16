@@ -6,6 +6,8 @@ import Navbar from "../components/Nav";
 import { useTransition, animated, Transition } from "react-spring";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
+import imdb from "../assets/IMDB.svg";
+import tomato from "../assets/tomato.svg";
 
 // Define the Home component
 const Home: React.FC = () => {
@@ -74,8 +76,8 @@ const Home: React.FC = () => {
               ...props,
               backgroundImage: `linear-gradient(
                 to bottom,
-                rgba(59, 67, 50, 0.4),
-                rgba(52, 73, 3, 0.079)
+                rgba(59, 67, 50, 0.5),
+                rgba(52, 73, 3, 0.3)
               ), url(${backdropBaseUrl}${item?.backdrop_path})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
@@ -86,12 +88,22 @@ const Home: React.FC = () => {
             <Navbar onSearch={handleSearch} />
 
             <div className="md:w-96 mb-10">
-              <h1 className="text-3xl font-bold mb-4 text-primary">
+              <h1 className="text-3xl font-bold mb-4 text-white">
                 {item?.title}
               </h1>
+              <div className="flex gap-x-8 items-center text-white justify-start mb-3">
+                <p className="flex items-center justify-start gap-x-2 text-xs font-light">
+                  <img src={imdb} alt="" />
+                  <span>86.0 / 100</span>
+                </p>
+                <p className="flex items-center justify-start gap-x-2 text-xs font-light">
+                  <img src={tomato} alt="" />
+                  <span>97%</span>
+                </p>
+              </div>
               <p
                 style={{ fontSize: "14px" }}
-                className="w-full text-justify font-medium mb-8 text-red-400"
+                className="w-full text-justify font-medium mb-8 text-white"
               >
                 {item?.overview}
               </p>
@@ -99,7 +111,7 @@ const Home: React.FC = () => {
                 to={`https://www.themoviedb.org/movie/${item?.id}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:text-hover bg-white rounded-lg py-2 px-3 text-md"
+                className="text-white hover:text-hover bg-bg rounded-lg py-2 px-3 text-md"
               >
                 Learn More
               </Link>

@@ -31,7 +31,7 @@ const MovieCard: React.FC<MovieCardProps> = ({
       <div style={divStyle} className="w-full">
         <img
           src={`${posterBaseUrl}${poster_path}`}
-          className="w-full" 
+          className="w-full h-[370px]" 
           alt={title}
           data-testid="movie-poster"
         />

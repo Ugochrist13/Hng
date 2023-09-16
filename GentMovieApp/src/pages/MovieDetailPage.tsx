@@ -18,7 +18,7 @@ const MovieDetailPage: React.FC = () => {
       try {
         // Fetch movie details based on the provided ID
         const movieData = await fetchMovieDetails(Number(id));
-        
+        console.log(movieData);
         // Update the state with the fetched movie data
         setMovie(movieData);
       } catch (error) {

@@ -51,11 +51,11 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch }) => {
         {/* Search input field */}
         <input
           type="text"
-          placeholder="Search for your movies.."
+          placeholder="What movie do you want to watch?"
           value={query}
           onKeyPress={handleKeyPress}
           onChange={(e) => setQuery(e.target.value)}
-          className="w-[90%] p-2 pl-10 pr-4 py-1 text-xs text-white bg-transparent outline-none focus:outline-none focus:border-none focus:shadow-none border-transparent shadow-none"
+          className="w-[90%] p-2 pl-4 pr-4 py-1 text-xs text-white bg-transparent outline-none focus:outline-none focus:border-none focus:shadow-none border-transparent shadow-none"
         />
         {/* Search button */}
         <button
@@ -73,7 +73,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch }) => {
         <div className="block">
           {/* Hamburger menu icon */}
           <div className="hamburger-menu">
-            <IoMdMenu className="text-2xl text-red-400" />
+            <IoMdMenu className="text-2xl text-white bg-pink-600 rounded-full p-1" />
           </div>
         </div>
       </div>

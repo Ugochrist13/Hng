@@ -10,6 +10,7 @@ module.exports = withMT({
       colors: {
         primary: "#0085FF",
         hover: "#3944BC",
+        bg:"#BE123C"
       },
     },
   },
