@@ -28,7 +28,7 @@ const MovieCard: React.FC<MovieCardProps> = ({
 
   return (
     <Link
-      to={`/movies/${id}`}
+      to={`/movies/${id}`} data-testid="movie-card"
       className="w-72 cursor-pointer transition-transform transform hover:scale-105 mb-6"
     >
       <div style={divStyle} className="w-full">
