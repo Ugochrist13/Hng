@@ -86,7 +86,7 @@ const MovieDetail: React.FC<MovieDetailProps> = ({
               <p
                 data-testid="movie-runtime"
                 className="text-black hover:text-hover text-2xl"
-              >{`. ${runtime} mins`}</p>
+              >{`. ${runtime}`}</p>
             </div>
             <div className="flex justify-start gap-x-2 items-center">
               {genres?.map((genre, id) => (

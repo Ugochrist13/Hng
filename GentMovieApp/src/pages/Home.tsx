@@ -123,7 +123,7 @@ const Home: React.FC = () => {
       {/* Featured Movies section */}
       <div className="w-full flex justify-between items-center mb-4 px-4">
         <h1 className="font-bold">Featured Movies</h1>
-        <p className="text-primary font-semibold">See more ..</p>
+        <p className="text-bg font-semibold">See more ..</p>
       </div>
 
       {/* Render the MovieList component with movies */}

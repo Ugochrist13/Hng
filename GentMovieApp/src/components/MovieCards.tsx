@@ -43,10 +43,10 @@ const MovieCard: React.FC<MovieCardProps> = ({
         data-testid="movie-release-date"
         className="text-gray-700 hover:text-hover text-sm"
       >
-        ({release_date})
+        {release_date}
       </p>
       <h2
-        className="text-black hover:text-hover mt-1"
+        className="text-black hover:text-hover mt-1 mb-2"
         data-testid="movie-title"
       >
         {title}
@@ -60,9 +60,9 @@ const MovieCard: React.FC<MovieCardProps> = ({
           <img src={tomato} alt="" />
           <span>97%</span>
         </p>
-        <div className="flex justify-start gap-x-2 items-center">
+        <div className="flex justify-start gap-x-2 items-center py-2">
           {genres?.map((genre, id) => (
-            <div key={id} className="text-gray-700">
+            <div key={id} className="text-black">
               {genre?.name}
             </div>
           ))}
