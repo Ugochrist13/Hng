@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import imdb from "../assets/IMDB.svg";
 import tomato from "../assets/tomato.svg";
+import save from "../assets/save.svg";
+import circle from "../assets/circle.svg";
 
 // Define the Home component
 const Home: React.FC = () => {
@@ -111,9 +113,11 @@ const Home: React.FC = () => {
                 to={`https://www.themoviedb.org/movie/${item?.id}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-hover bg-bg rounded-lg py-2 px-3 text-md"
+                className="flex relative items-center justify-center gap-1 text-white hover:text-hover bg-bg rounded-lg py-2 px-1 text-md"
               >
-                Learn More
+                <img className="absolute w-8 left-32" src={save} alt="" />
+                <img className="w-[40px]" src={circle} alt="" />
+                <p className="text-white">Watch Trailer</p>
               </Link>
             </div>
           </animated.div>

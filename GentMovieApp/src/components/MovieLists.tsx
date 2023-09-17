@@ -17,11 +17,14 @@ interface MovieListProps {
  * @param {MovieListProps} props - The properties passed to the component.
  */
 const MovieList: React.FC<MovieListProps> = ({ movies }) => {
+  // Use slice to get the first ten movies
+  const firstTenMovies = movies.slice(0, 10);
+
   return (
     <div className="flex flex-wrap items-center justify-around gap-4 p-4">
-      {movies?.map((movie) => (
+      {firstTenMovies.map((movie) => (
         <MovieCard
-          key={movie.id} // Unique key for each movie card
+          key={movie.id} 
           id={movie.id}
           title={movie.title}
           release_date={movie.release_date}
