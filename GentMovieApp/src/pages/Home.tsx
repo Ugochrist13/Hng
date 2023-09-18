@@ -113,10 +113,10 @@ const Home: React.FC = () => {
                 to={`https://www.themoviedb.org/movie/${item?.id}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex relative items-center justify-center gap-1 text-white hover:text-hover bg-bg rounded-lg py-2 px-1 text-md"
+                className="w-48 flex relative items-center justify-center gap-x-1 text-white hover:text-hover bg-bg rounded-lg p-1 text-md"
               >
-                <img className="absolute w-8 left-32" src={save} alt="" />
-                <img className="w-[40px]" src={circle} alt="" />
+                <img className="absolute w-7 left-[34px]" src={save} alt="" />
+                <img className="w-[36px]" src={circle} alt="" />
                 <p className="text-white">Watch Trailer</p>
               </Link>
             </div>
