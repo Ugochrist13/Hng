@@ -127,7 +127,7 @@ const MovieDetail: React.FC<MovieDetailProps> = ({
               </span>
             </p>
             <div className="flex mt-6">
-              <div className="w-1/2 z-20 flex items-center justify-center rounded-lg border bg-bg py-4 gap-x-2 mb-6">
+              <div className="w-1/2 flex items-center justify-center rounded-lg border bg-bg py-4 gap-x-2 mb-6">
                 <p className="text-white text-xl">Top rated movie #65</p>
               </div>
               <div className="w-2/3 flex items-center justify-between rounded-lg border border-bg py-4 px-4 mb-6">
