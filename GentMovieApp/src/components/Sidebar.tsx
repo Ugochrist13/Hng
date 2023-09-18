@@ -33,7 +33,7 @@ const Sidebar = () => {
 
   return (
     <div
-      className={`bg-white border rounded-lg border-gray-700 fixed z-20 lg:min-h-screen flex flex-col justify-between md:justify-between md:flex-col lg:justify-start items-center justify-start lg:flex-col w-full lg:w-[11%] lg:mr-4`}
+      className={`bg-white border rounded-lg border-gray-700 fixed z-50 lg:min-h-screen flex flex-col justify-between md:justify-between md:flex-col lg:justify-start items-center justify-start lg:flex-col w-full lg:w-[11%] lg:mr-4`}
     >
       <div className="w-full flex justify-between items-center">
         {/* Logo and toggle button */}
